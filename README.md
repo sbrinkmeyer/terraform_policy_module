@@ -1,15 +1,40 @@
-# managed-policies
-This repo contains the managed IAM policies for AWS Namespace Isolation
+# cross-account-role
 
-still emerging and evolving and changing
+This repository contains the terraform templates for creating AWS Namespaces. 
 
-there are many opinions expressed in the creation and use of accounts/vpcs wired in to the configuration of the variables/policies
+## Design
 
-the modules templated as HCL makes it easy to just use tform variables to automatically make the json policy
-downside is
-you can only have 10 policies attached (each of which can only be 5k characters) and n number of inline policies injected, all of which can only total up to 10k characters.  so what to do?
+The major components are an unprivileged ${tenant}BuildAgent role in a central account that can assume privileged ${tenant}BuildAgent roles in other AWS accounts, and iam policies that grant the BuildAgent roles write access to various AWS resources.
+For the (non-Chinese) Commons accounts, the central build agent roles are deployed in entsvcs-non and can assume roles in aws-sbx-commons1, aws-non-commons1 and aws-prd-commons1.
 
-1 use the templating bit from tform to create templated json data islands that represent the tenant customized policies then have an out of band process that uses the terraform.tfvars to determine the required policies, then "pack" them together in to logical units up to 5k character big and name these "TENANT-packed[0-9]" which in turn are deployed (in addition to all of [or just the request list] of aws services), and attached to the TENANT-sso role.
-2 a second use will allow iteration of multi-region/multi-account for finer grained access as well as multiple resources that can't be splated (as in the efs requiring an ID.  so in a non-production account where a tenant needs a dev|qa|uat efs, you will need 3 ids, that are allowed through the efs policy which the hcl currently does not do)
+## Isolation Concepts
+The Cloud Automation Team maintains a library of IAM policy templates designed to provided limited access to AWS resources. In general, each policy template contains everything needed to access that resource, both programatically and in the AWS Console, though there are various exceptions to that rule (of note, most of the IAM-related rules are in iam.tf and not duplicated in each policy).
 
-so if you have a small service base then stay with the hcl declaration.  if not stay tuned as i'm working the template version as well.  :)
+The isolation mechanism varies per resource due to AWS inconsistencies. Please consult the policy templates under modules/managed-policies for individual details.
+
+Some examples of isolation mechanisms
+* limiting access to resources with ARNs that have the tenant namespace in the ARN
+```
+  resources = [
+    arn:aws:iam::123456789:role/${namespace}-*"
+  ]
+```
+* limiting access to resources based on resource tags
+```
+    resources = ["*"]
+
+    condition {
+      test     = "StringLike"
+      variable = "rds:db-tag/Name"
+      values   = ["${namespace}*"]
+    }
+```
+
+## Important Caveat
+
+MANY AWS RESOURCES CANNOT BE NAMESPACED!!!1!1eleventy
+The list of AWS resources that cannot be restricted includes, but is not limited to, elasticache, APIGateway, and Cloudfront. Tenants with access to such resources are fully capable of wreaking havoc on other tenant's resources. Proceed with caution.
+
+## Additional Information
+* [CAT's AWS Commons Documentation](https://confluence.nike.com/display/CAT/AWS+Commons+Documentation)
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actionsconditions.html

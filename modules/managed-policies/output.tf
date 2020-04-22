@@ -1,0 +1,106 @@
+//output.tf
+
+output "json_out_map" {
+  value = {
+    "acm"              = data.aws_iam_policy_document.acm_pd.json
+    "amq"              = data.aws_iam_policy_document.amq_pd.json
+    "apigateway"       = data.aws_iam_policy_document.apigateway_pd.json
+    "base"             = data.aws_iam_policy_document.base_pd.json
+    "batch"            = data.aws_iam_policy_document.batch_pd.json
+    "cerberus"         = data.aws_iam_policy_document.cerberus_pd.json
+    "cloudformation"   = data.aws_iam_policy_document.cloudformation_pd.json
+    "cloudfront"       = data.aws_iam_policy_document.cloudfront_pd.json
+    "cloudwatchlogs"   = data.aws_iam_policy_document.cloudwatchlogs_pd.json
+    "codedeploy"       = data.aws_iam_policy_document.codedeploy_pd.json
+    "datapipeline"     = data.aws_iam_policy_document.datapipeline_pd.json
+    "dynamodb"         = data.aws_iam_policy_document.dynamodb_pd.json
+    "dms"              = data.aws_iam_policy_document.dms_pd.json
+    "ec2"              = data.aws_iam_policy_document.ec2_pd.json
+    "ecs"              = data.aws_iam_policy_document.ecs_pd.json
+    "efs"              = data.aws_iam_policy_document.efs_pd.json
+    "elasticache"      = data.aws_iam_policy_document.elasticache_pd.json
+    "elasticbeanstalk" = data.aws_iam_policy_document.elasticbeanstalk_pd.json
+    "elasticsearch"    = data.aws_iam_policy_document.elastisearch_pd.json
+    "emr"              = data.aws_iam_policy_document.emr_pd.json
+    "firehose"         = data.aws_iam_policy_document.firehose_pd.json
+    "glue"             = data.aws_iam_policy_document.glue_pd.json
+    "iam"              = data.aws_iam_policy_document.iam_pd.json
+    "iot"              = data.aws_iam_policy_document.iot_pd.json
+    "kinesis"          = data.aws_iam_policy_document.kinesis_pd.json
+    "kinesisanalytics" = data.aws_iam_policy_document.kinesisanalytics_pd.json
+    "kinesisvideo"     = data.aws_iam_policy_document.kinesisvideo_pd.json
+    "lambda"           = data.aws_iam_policy_document.lambda_pd.json
+    "language"         = data.aws_iam_policy_document.language_pd.json
+    "rds"              = data.aws_iam_policy_document.rds_pd.json
+    "redshift"         = data.aws_iam_policy_document.redshift_pd.json
+    "resourcegroups"   = data.aws_iam_policy_document.resourcegroups_pd.json
+    "ro-base"          = data.aws_iam_policy_document.ro_base_pd.json
+    "route53"          = data.aws_iam_policy_document.route53_pd.json
+    "s3"               = data.aws_iam_policy_document.s3_pd.json
+    "s3_ro"            = data.aws_iam_policy_document.s3_ro_pd.json
+    "sagemaker"        = data.aws_iam_policy_document.sagemaker_pd.json
+    "sdb"              = data.aws_iam_policy_document.sdb_pd.json
+    "secretsmanager"   = data.aws_iam_policy_document.secretsmanager_pd.json
+    "ses"              = data.aws_iam_policy_document.ses_pd.json
+    "sns"              = data.aws_iam_policy_document.sns_pd.json
+    "sqs"              = data.aws_iam_policy_document.sqs_pd.json
+    "ssm"              = data.aws_iam_policy_document.ssm_pd.json
+    "stepfunctions"    = data.aws_iam_policy_document.stepfunctions_pd.json
+    "support-base"     = data.aws_iam_policy_document.support_base_pd.json
+    "vmimport"         = data.aws_iam_policy_document.vmimport_pd.json
+    "xray"             = data.aws_iam_policy_document.xray_pd.json
+  }
+}
+
+output "json_size_map" {
+  value = {
+    "acm"              = length(data.aws_iam_policy_document.acm_pd.json)
+    "amq"              = length(data.aws_iam_policy_document.amq_pd.json)
+    "apigateway"       = length(data.aws_iam_policy_document.apigateway_pd.json)
+    "base"             = length(data.aws_iam_policy_document.base_pd.json)
+    "batch"            = length(data.aws_iam_policy_document.batch_pd.json)
+    "cerberus"         = length(data.aws_iam_policy_document.cerberus_pd.json)
+    "cloudformation"   = length(data.aws_iam_policy_document.cloudformation_pd.json)
+    "cloudfront"       = length(data.aws_iam_policy_document.cloudfront_pd.json)
+    "cloudwatchlogs"   = length(data.aws_iam_policy_document.cloudwatchlogs_pd.json)
+    "codedeploy"       = length(data.aws_iam_policy_document.codedeploy_pd.json)
+    "datapipeline"     = length(data.aws_iam_policy_document.datapipeline_pd.json)
+    "dynamodb"         = length(data.aws_iam_policy_document.dynamodb_pd.json)
+    "dms"              = length(data.aws_iam_policy_document.dms_pd.json)
+    "ec2"              = length(data.aws_iam_policy_document.ec2_pd.json)
+    "ecs"              = length(data.aws_iam_policy_document.ecs_pd.json)
+    "efs"              = length(data.aws_iam_policy_document.efs_pd.json)
+    "elasticache"      = length(data.aws_iam_policy_document.elasticache_pd.json)
+    "elasticbeanstalk" = length(data.aws_iam_policy_document.elasticbeanstalk_pd.json)
+    "elasticsearch"    = length(data.aws_iam_policy_document.elastisearch_pd.json)
+    "emr"              = length(data.aws_iam_policy_document.emr_pd.json)
+    "firehose"         = length(data.aws_iam_policy_document.firehose_pd.json)
+    "glue"             = length(data.aws_iam_policy_document.glue_pd.json)
+    "iam"              = length(data.aws_iam_policy_document.iam_pd.json)
+    "iot"              = length(data.aws_iam_policy_document.iot_pd.json)
+    "kinesis"          = length(data.aws_iam_policy_document.kinesis_pd.json)
+    "kinesisanalytics" = length(data.aws_iam_policy_document.kinesisanalytics_pd.json)
+    "kinesisvideo"     = length(data.aws_iam_policy_document.kinesisvideo_pd.json)
+    "lambda"           = length(data.aws_iam_policy_document.lambda_pd.json)
+    "language"         = length(data.aws_iam_policy_document.language_pd.json)
+    "rds"              = length(data.aws_iam_policy_document.rds_pd.json)
+    "redshift"         = length(data.aws_iam_policy_document.redshift_pd.json)
+    "resourcegroups"   = length(data.aws_iam_policy_document.resourcegroups_pd.json)
+    "ro-base"          = length(data.aws_iam_policy_document.ro_base_pd.json)
+    "route53"          = length(data.aws_iam_policy_document.route53_pd.json)
+    "s3"               = length(data.aws_iam_policy_document.s3_pd.json)
+    "s3_ro"            = length(data.aws_iam_policy_document.s3_ro_pd.json)
+    "sagemaker"        = length(data.aws_iam_policy_document.sagemaker_pd.json)
+    "sdb"              = length(data.aws_iam_policy_document.sdb_pd.json)
+    "secretsmanager"   = length(data.aws_iam_policy_document.secretsmanager_pd.json)
+    "ses"              = length(data.aws_iam_policy_document.ses_pd.json)
+    "sns"              = length(data.aws_iam_policy_document.sns_pd.json)
+    "sqs"              = length(data.aws_iam_policy_document.sqs_pd.json)
+    "ssm"              = length(data.aws_iam_policy_document.ssm_pd.json)
+    "stepfunctions"    = length(data.aws_iam_policy_document.stepfunctions_pd.json)
+    "support-base"     = length(data.aws_iam_policy_document.support_base_pd.json)
+    "vmimport"         = length(data.aws_iam_policy_document.vmimport_pd.json)
+    "xray"             = length(data.aws_iam_policy_document.xray_pd.json)
+  }
+}
+
