@@ -8,7 +8,7 @@ data "aws_iam_policy_document" "assumesamlpolicydoc" {
       type = "Federated"
 
       identifiers = [
-        "arn:${var.partition}:iam::${var.target_account_id}:saml-provider/nike-okta",
+        "arn:${var.partition}:iam::${var.target_account_id}:saml-provider/business-okta",
         "arn:${var.partition}:iam::${var.target_account_id}:saml-provider/${var.saml_provider}",
       ]
     }

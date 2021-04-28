@@ -305,4 +305,4 @@ Dates are YYYY-MM-DD
 - write access to dynamoDB items in namespaced dynamoDB instances for SupportRole
 
 ## [2.0.0]
-Initial changelog entry. Merged https://github.nike.com/cat-terraform/managed-policies into https://github.nike.com/cat-terraform/cross-account-role.
+Initial changelog entry. Merged https://github.business.com/cat-terraform/managed-policies into https://github.business.com/cat-terraform/cross-account-role.

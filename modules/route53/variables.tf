@@ -7,8 +7,8 @@ variable "target_nickname" {
 }
 
 variable "target_account_tldn" {
-  description = "this is the tldn for the account (defaults to thecommons.nike.com) "
-  default     = "thecommons.nike.com"
+  description = "this is the tldn for the account (defaults to thecommons.business.com) "
+  default     = "thecommons.business.com"
 }
 
 variable "tags" {

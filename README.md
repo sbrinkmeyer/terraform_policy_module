@@ -36,5 +36,5 @@ MANY AWS RESOURCES CANNOT BE NAMESPACED!!!1!1eleventy
 The list of AWS resources that cannot be restricted includes, but is not limited to, elasticache, APIGateway, and Cloudfront. Tenants with access to such resources are fully capable of wreaking havoc on other tenant's resources. Proceed with caution.
 
 ## Additional Information
-* [CAT's AWS Commons Documentation](https://confluence.nike.com/display/CAT/AWS+Commons+Documentation)
+* [CAT's AWS Commons Documentation](https://confluence.business.com/display/CAT/AWS+Commons+Documentation)
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actionsconditions.html

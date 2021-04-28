@@ -1,5 +1,5 @@
 //cerberus.tf
-// docs at https://confluence.nike.com/display/CPE/Cerberus+Nike+User+Guide
+// docs at https://confluence.business.com/display/CPE/Cerberus+business+User+Guide
 data "aws_iam_policy_document" "cerberus_pd" {
   statement {
     sid       = "CerberusPolicy"

@@ -259,7 +259,7 @@ data "aws_iam_policy_document" "ro_base_pd" {
   }
 
   // AAA JWT Key Management SVCS
-  // https://confluence.nike.com/display/SECDEV/Nike+JWT+Reference+Guide
+  // https://confluence.business.com/display/SECDEV/BUSINESS+JWT+Reference+Guide
 
   // Allows tenants to list objects in public-keys and their private-keys subdirectory
   statement {

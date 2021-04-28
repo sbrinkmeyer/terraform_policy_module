@@ -11,8 +11,8 @@ variable "region_id" {
 }
 
 variable "target_account_tldn" {
-  description = "this is the tldn for the account (defaults to thecommons.nike.com) "
-  default     = "thecommons.nike.com"
+  description = "this is the tldn for the account (defaults to thecommons.business.com) "
+  default     = "thecommons.business.com"
 }
 
 variable "target_account_id" {
@@ -47,8 +47,8 @@ variable "tags" {
 
 // defaulted for module
 variable "saml_provider" {
-  description = "the name of the saml provider for the account [nike-okta|nike-sso]"
-  default     = "nike-sso"
+  description = "the name of the saml provider for the account [business-okta|business-sso]"
+  default     = "business-sso"
 }
 
 variable "entsvcs_account_id" {

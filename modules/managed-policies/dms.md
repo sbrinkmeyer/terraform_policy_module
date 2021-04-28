@@ -23,12 +23,12 @@ variable "namespace" {
   default     = "catscratch"
 }
 
-data "aws_vpc" "nike" {
+data "aws_vpc" "business" {
   cidr_block = "10.*"
 }
 
 data "aws_subnet_ids" "rds" {
-  vpc_id = "${data.aws_vpc.nike.id}"
+  vpc_id = "${data.aws_vpc.business.id}"
 
   tags = {
     cats-usage = "database"

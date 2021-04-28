@@ -19,7 +19,7 @@ names in map, will need to match the consumers required array
 main.tf
 ```
 module "managed_policies_module" {
-    source                      =   "github.nike.com/TOps-AWS-Infrastructure-POCs/policy-module"
+    source                      =   "github.business.com/TOps-AWS-Infrastructure-POCs/policy-module"
     module_customer_namespace   =   "${var.customer_namespace}"
     module_account_id           =   "${var.account_id}"
     module_target_region        =   "${var.target_region}"

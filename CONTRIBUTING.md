@@ -4,12 +4,12 @@ Much of this document was inspired by Puppetlabs' [fabulous example](https://git
 
 ## Getting Started
 
-* Make sure you have access to [JIRA](https://jira.nike.com).
-* Make sure you have access to [GitHub Enterprise](https://github.nike.com/).
+* Make sure you have access to [JIRA](https://jira.business.com).
+* Make sure you have access to [GitHub Enterprise](https://github.business.com/).
 * Submit a Jira ticket for your issue if one does not already exist.
   * Clearly describe the issue including steps to reproduce when it is a bug.
   * Make sure you fill in the earliest version that you know has the issue.
-* Make sure you have you own [namespace](https://confluence.nike.com/display/CAT/Hackenv+Namespaces), or access to a test namespace
+* Make sure you have you own [namespace](https://confluence.business.com/display/CAT/Hackenv+Namespaces), or access to a test namespace
 * Clone the repository
 
 ## Making Changes
@@ -20,7 +20,7 @@ Much of this document was inspired by Puppetlabs' [fabulous example](https://git
 * Check for unnecessary whitespace with `git diff --check` before committing.
 * Make sure your commit messages are in the proper format. If the commit
   addresses an issue filed in the
-  [CAT Jira project](https://jira.nike.com/projects/CAT/issues), start
+  [CAT Jira project](https://jira.business.com/projects/CAT/issues), start
   the first line of the commit with the issue number in parentheses.
 ```
     (CAT-1234) Make the example in CONTRIBUTING imperative and concrete
@@ -51,6 +51,6 @@ Much of this document was inspired by Puppetlabs' [fabulous example](https://git
 
 ## Additional Resources
 
-* https://confluence.nike.com/display/CAT/Managing+Tenant+IAM+Roles+and+Policies
-* https://confluence.nike.com/display/CAT/Hackenv+Namespaces
+* https://confluence.business.com/display/CAT/Managing+Tenant+IAM+Roles+and+Policies
+* https://confluence.business.com/display/CAT/Hackenv+Namespaces
 * [General Github Documentation](https://help.github.com/)
